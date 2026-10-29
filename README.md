@@ -47,7 +47,7 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.6.6`입니다.
+현재 버전은 `0.7.0`입니다.
 
 - [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/StreamPing-Release/releases/latest)
@@ -86,6 +86,9 @@ StreamPing은 기본적으로 OBS 실행 후 하루에 한 번 새 버전을 확
 따라 선택, 권장 또는 필수 알림을 표시하며, 필수가 아닌 버전은 건너뛸 수 있습니다. 자동으로
 설치하지는 않으며, 설정 화면의 **업데이트 > 지금 확인**에서 직접 확인하거나 자동 확인을
 끌 수 있습니다.
+
+`0.7.0`에서는 설정과 미리보기 내부 구조를 분리하고, 복사되는 진단 정보에 Webhook URL,
+Discord 역할 ID, 치지직 채널 ID가 포함되지 않는지 자동 테스트를 보강했습니다.
 
 ## 설정 방법
 
