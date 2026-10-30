@@ -52,6 +52,10 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 - [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/StreamPing-Release/releases/latest)
 
+배포 저장소와 GitHub Releases에는 현재 버전만 유지합니다. 이전 버전의 변경 이력은
+[소스 저장소의 CHANGELOG](https://github.com/TereBin/StreamPing/blob/main/CHANGELOG.md)에서
+확인할 수 있습니다.
+
 다운로드한 ZIP은 [SHA256SUMS.txt](./SHA256SUMS.txt)와 비교해 무결성을 확인할 수 있습니다.
 
 ```powershell
