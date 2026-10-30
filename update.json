@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "0.7.0",
+  "latestVersion": "0.8.0",
   "minimumSupportedVersion": "0.5.0",
   "urgency": "optional",
-  "title": "StreamPing 0.7.0 업데이트",
-  "message": "설정과 미리보기 구조를 정리하고 진단 정보 보안 회귀 테스트를 보강했습니다.",
-  "downloadUrl": "https://github.com/TereBin/StreamPing-Release/releases/latest"
+  "title": "OBSChzzkPing 0.8.0 업데이트",
+  "message": "프로그램과 저장소 이름을 OBSChzzkPing으로 변경했습니다. 기존 설정과 Discord 연결은 유지됩니다.",
+  "downloadUrl": "https://github.com/TereBin/OBSChzzkPing-Release/releases/latest"
 }

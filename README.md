@@ -1,6 +1,6 @@
-# StreamPing 배포판
+# OBSChzzkPing 배포판
 
-StreamPing은 OBS Studio에서 방송을 시작하면 치지직 채널의 LIVE 상태를 확인한 뒤
+OBSChzzkPing은 OBS Studio에서 방송을 시작하면 치지직 채널의 LIVE 상태를 확인한 뒤
 Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 여는 Windows용 플러그인입니다.
 
 ## 바로 가기
@@ -17,7 +17,7 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 베타 안내
 
-**StreamPing은 현재 베타 버전입니다.**
+**OBSChzzkPing은 현재 베타 버전입니다.**
 
 치지직 LIVE 상태와 방송 정보는 치지직 공식 Open API가 아니라 치지직 웹 서비스에서
 사용하는 공개 `live-detail` 엔드포인트를 통해 확인합니다. 별도의 API 키는 필요하지 않지만,
@@ -47,19 +47,20 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.7.0`입니다.
+현재 버전은 `0.8.0`입니다.
 
-- [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)
-- [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/StreamPing-Release/releases/latest)
+- [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-windows-x64.zip)
+- [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest)
 
-배포 저장소와 GitHub Releases에는 현재 버전만 유지합니다. 이전 버전의 변경 이력은
-[소스 저장소의 CHANGELOG](https://github.com/TereBin/StreamPing/blob/main/CHANGELOG.md)에서
+배포 저장소의 파일 목록에는 현재 버전만 유지하며, 과거 GitHub Releases와 태그는
+삭제하지 않습니다. 전체 변경 이력은
+[소스 저장소의 CHANGELOG](https://github.com/TereBin/OBSChzzkPing/blob/main/CHANGELOG.md)에서도
 확인할 수 있습니다.
 
 다운로드한 ZIP은 [SHA256SUMS.txt](./SHA256SUMS.txt)와 비교해 무결성을 확인할 수 있습니다.
 
 ```powershell
-Get-FileHash .\StreamPing-windows-x64.zip -Algorithm SHA256
+Get-FileHash .\OBSChzzkPing-windows-x64.zip -Algorithm SHA256
 ```
 
 ## 설치 및 업데이트
@@ -68,11 +69,11 @@ Get-FileHash .\StreamPing-windows-x64.zip -Algorithm SHA256
 2. 다운로드한 ZIP 파일의 압축을 풉니다.
 3. 압축을 푼 폴더에서 `install.cmd`를 실행합니다.
 4. 관리자 권한 요청이 나타나면 승인합니다.
-5. `StreamPing 업데이트가 완료되었습니다.`라는 메시지를 확인합니다.
+5. `OBSChzzkPing 업데이트가 완료되었습니다.`라는 메시지를 확인합니다.
 6. 안내에 따라 Enter 키를 눌러 설치 창을 닫습니다.
-7. OBS를 실행하고 **도구 > StreamPing 설정**을 엽니다.
+7. OBS를 실행하고 **도구 > OBSChzzkPing 설정**을 엽니다.
 
-설치 프로그램은 OBS 설치 위치를 자동으로 찾습니다. 기존 StreamPing이 있으면 DLL을
+설치 프로그램은 OBS 설치 위치를 자동으로 찾습니다. 기존 OBSChzzkPing이 있으면 DLL을
 `streamping.dll.bak`으로 백업한 뒤 새 버전으로 교체합니다. 이후 업데이트도 같은 순서로
 진행하면 됩니다.
 
@@ -86,13 +87,14 @@ install.cmd -ObsPath "D:\Apps\obs-studio"
 
 ### 업데이트 확인
 
-StreamPing은 기본적으로 OBS 실행 후 하루에 한 번 새 버전을 확인합니다. 업데이트 중요도에
+OBSChzzkPing은 기본적으로 OBS 실행 후 하루에 한 번 새 버전을 확인합니다. 업데이트 중요도에
 따라 선택, 권장 또는 필수 알림을 표시하며, 필수가 아닌 버전은 건너뛸 수 있습니다. 자동으로
 설치하지는 않으며, 설정 화면의 **업데이트 > 지금 확인**에서 직접 확인하거나 자동 확인을
 끌 수 있습니다.
 
-`0.7.0`에서는 설정과 미리보기 내부 구조를 분리하고, 복사되는 진단 정보에 Webhook URL,
-Discord 역할 ID, 치지직 채널 ID가 포함되지 않는지 자동 테스트를 보강했습니다.
+`0.8.0`부터 프로그램과 저장소 이름이 OBS와 치지직 용도를 드러내는 `OBSChzzkPing`으로
+변경되었습니다. 기존 설정을 유지하기 위해 내부 DLL 이름과 `/streamping-role` 명령은
+호환 식별자로 유지됩니다.
 
 ## 설정 방법
 
@@ -102,7 +104,7 @@ Discord 역할 ID, 치지직 채널 ID가 포함되지 않는지 자동 테스�
 2. **치지직 확인**을 눌러 채널 이름과 현재 LIVE 상태를 확인합니다.
 3. 설정 창 아래의 **저장**을 누릅니다.
 
-채널 URL을 입력하면 StreamPing이 채널 ID를 자동으로 추출합니다. 한 번 저장한 채널은 OBS를
+채널 URL을 입력하면 OBSChzzkPing이 채널 ID를 자동으로 추출합니다. 한 번 저장한 채널은 OBS를
 종료하거나 다시 실행해도 유지되므로, 채널이 바뀌지 않는 한 다시 입력할 필요가 없습니다.
 
 ### 2. Discord 알림 설정
@@ -113,7 +115,7 @@ Discord 역할 ID, 치지직 채널 ID가 포함되지 않는지 자동 테스�
 2. **Discord 연결**을 누릅니다.
 3. 브라우저에서 Discord에 로그인합니다.
 4. 알림을 받을 서버와 채널을 선택하고 권한을 승인합니다.
-5. StreamPing의 Discord 상태에 연결한 채널이 표시되는지 확인합니다.
+5. OBSChzzkPing의 Discord 상태에 연결한 채널이 표시되는지 확인합니다.
 6. 메시지를 편집하고 **미리보기**로 내용을 확인합니다.
 7. 필요하면 임베드 강조 색상과 채널, 카테고리, 썸네일 표시 여부를 조정합니다.
 8. **알림 메시지 테스트**를 눌러 실제 알림을 확인합니다.
@@ -126,13 +128,13 @@ Discord 역할 ID, 치지직 채널 ID가 포함되지 않는지 자동 테스�
 
 역할 멘션은 선택 기능입니다. 역할이 필요하지 않으면 이 절차를 건너뛰어도 됩니다.
 
-1. StreamPing 설정의 Discord 섹션에서 **역할 선택**을 누릅니다.
+1. OBSChzzkPing 설정의 Discord 섹션에서 **역할 선택**을 누릅니다.
 2. 설정 창 아래에 **연결된 Discord 채널에서 /streamping-role 명령으로 역할을 선택해
    주세요.**라는 문구가 표시되는지 확인합니다.
 3. 앞에서 알림을 받도록 연결한 Discord 채널로 이동합니다.
 4. 해당 채널의 메시지 입력란에서 `/streamping-role` 명령을 선택해 실행합니다.
 5. Discord에 표시되는 선택 항목에서 멘션할 역할을 고릅니다.
-6. StreamPing의 Discord 상태에 선택한 역할 이름이 표시되는지 확인합니다.
+6. OBSChzzkPing의 Discord 상태에 선택한 역할 이름이 표시되는지 확인합니다.
 7. 메시지에서 멘션할 위치에 `{role}`을 넣고 **알림 메시지 테스트**를 실행합니다.
 
 `/streamping-role`은 다른 채널이 아니라 실제 알림을 받도록 연결한 채널에서 실행해야 합니다.
@@ -221,13 +223,13 @@ X에는 자동으로 게시하지 않습니다. 방송 시작 시 작성 화면�
 | 확인 간격 | 5초 | 아직 LIVE가 아닐 때 다시 확인하는 간격 |
 | 최대 대기 | 120초 | LIVE 확인을 계속 시도하는 최대 시간 |
 
-치지직의 LIVE 반영이 OBS보다 늦을 수 있으므로 StreamPing은 최대 대기 시간 동안 반복해서
+치지직의 LIVE 반영이 OBS보다 늦을 수 있으므로 OBSChzzkPing은 최대 대기 시간 동안 반복해서
 확인합니다. 같은 방송에는 Discord 알림과 X 작성 화면을 각각 한 번만 실행합니다.
 
 ## 제거
 
 1. OBS Studio를 완전히 종료합니다.
-2. 가능하면 먼저 StreamPing 설정에서 Discord **연결 해제**를 눌러 생성된 Webhook을 삭제합니다.
+2. 가능하면 먼저 OBSChzzkPing 설정에서 Discord **연결 해제**를 눌러 생성된 Webhook을 삭제합니다.
 3. OBS 설치 폴더에서 다음 항목을 삭제합니다.
 
 ```text
@@ -238,9 +240,9 @@ data\obs-plugins\streamping\
 
 ## 문제 해결
 
-### `도구` 메뉴에 `StreamPing 설정`이 없음
+### `도구` 메뉴에 `OBSChzzkPing 설정`이 없음
 
-- **확인:** OBS에서 **도움말 > 로그 파일 > 현재 로그 보기**를 열고 `[StreamPing] Plugin
+- **확인:** OBS에서 **도움말 > 로그 파일 > 현재 로그 보기**를 열고 `[OBSChzzkPing] Plugin
   loaded`를 검색합니다.
 - **해결:** 해당 문구가 없다면 OBS를 완전히 종료하고 최신 ZIP의 `install.cmd`를 다시
   실행합니다. 기본 설치에서는 다음 파일이 있어야 합니다.
@@ -252,9 +254,9 @@ data\obs-plugins\streamping\
 
 ### 로그에 이전 플러그인 버전이 표시됨
 
-- **확인:** 로그의 `[StreamPing] Plugin loaded (version ...)`을 [최신 릴리스
-  페이지](https://github.com/TereBin/StreamPing-Release/releases/latest)의 버전과 비교합니다.
-- **해결:** OBS를 완전히 종료하고 [최신 ZIP](https://github.com/TereBin/StreamPing-Release/releases/latest/download/StreamPing-windows-x64.zip)을
+- **확인:** 로그의 `[OBSChzzkPing] Plugin loaded (version ...)`을 [최신 릴리스
+  페이지](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest)의 버전과 비교합니다.
+- **해결:** OBS를 완전히 종료하고 [최신 ZIP](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-windows-x64.zip)을
   다시 내려받아 설치합니다. OBS가 실행 중이면 기존 DLL이 교체되지 않습니다.
 
 ### 설치 프로그램이 OBS를 찾지 못함
@@ -271,7 +273,7 @@ data\obs-plugins\streamping\
 
 ### `치지직 응답 오류 (0): TLS initialization failed`가 표시됨
 
-- **확인:** OBS 로그에서 StreamPing 버전을 확인합니다. 이 오류는 Qt TLS 구성 요소를 사용하던
+- **확인:** OBS 로그에서 OBSChzzkPing 버전을 확인합니다. 이 오류는 Qt TLS 구성 요소를 사용하던
   이전 빌드에서 발생할 수 있습니다.
 - **해결:** OBS를 완전히 종료하고 최신 ZIP을 다시 설치합니다. 현재 버전은 Windows의
   WinHTTP를 사용하므로 별도의 Qt TLS DLL을 복사할 필요가 없습니다.
@@ -298,7 +300,7 @@ data\obs-plugins\streamping\
 
 ### Discord 역할을 선택할 수 없음
 
-- **확인:** StreamPing에서 **역할 선택**을 먼저 눌렀는지, `/streamping-role` 명령을 실제
+- **확인:** OBSChzzkPing에서 **역할 선택**을 먼저 눌렀는지, `/streamping-role` 명령을 실제
   알림을 받도록 연결한 채널에서 실행했는지 확인합니다.
 - **해결:** [역할 멘션 설정](#역할-멘션-설정)의 순서대로 다시 진행합니다. 명령을 실행하는
   사용자는 해당 채널의 Webhook을 관리할 권한이 있어야 합니다.
@@ -326,10 +328,10 @@ data\obs-plugins\streamping\
 
 ### 새 버전 알림이 표시되지 않음
 
-- **확인:** StreamPing은 자동 확인을 켠 상태에서 마지막 확인 후 24시간이 지나야 OBS 시작 후
+- **확인:** OBSChzzkPing은 자동 확인을 켠 상태에서 마지막 확인 후 24시간이 지나야 OBS 시작 후
   다시 확인합니다.
 - **해결:** 인터넷 연결을 확인하고 설정의 **업데이트 > 지금 확인**을 누릅니다. 알림이 없어도
-  [최신 릴리스 페이지](https://github.com/TereBin/StreamPing-Release/releases/latest)에서 직접
+  [최신 릴리스 페이지](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest)에서 직접
   버전을 확인할 수 있습니다.
 
 ### 다운로드 또는 검사 중 Defender가 파일을 차단함
@@ -353,24 +355,24 @@ Discord 간편 연결 및 역할 선택 과정에서 사용하는 임시 세션 
 토큰을 저장하지 않으며 게시 전 사용자가 직접 내용을 확인하고 전송합니다.
 
 플러그인 소스 코드, 빌드 방법, Discord 연결용 Worker 구성은
-[StreamPing 소스 저장소](https://github.com/TereBin/StreamPing)에서 확인할 수 있습니다.
-StreamPing은 [GNU General Public License v2.0](./LICENSE)으로 배포됩니다.
+[OBSChzzkPing 소스 저장소](https://github.com/TereBin/OBSChzzkPing)에서 확인할 수 있습니다.
+OBSChzzkPing은 [GNU General Public License v2.0](./LICENSE)으로 배포됩니다.
 
 ## 문제 보고
 
-오류 보고와 기능 제안은 [StreamPing Issues](https://github.com/TereBin/StreamPing/issues)를
+오류 보고와 기능 제안은 [OBSChzzkPing Issues](https://github.com/TereBin/OBSChzzkPing/issues)를
 이용해 주세요. 공개 이슈 작성이 어렵거나 개별 문의가 필요하면
 [Discord에서 TereBin에게 문의](https://discordapp.com/users/537256771501424640)할 수 있습니다.
 
 OBS에서 **도움말 > 로그 파일 > 현재 로그 보기**를 선택하고, 문제 발생 직후 로그에서
-`[StreamPing]`이 포함된 줄과 설정 창 아래의 오류 문구를 함께 제공하면 원인 확인이
-빨라집니다. StreamPing 설정의 **지원 > 진단 정보 복사**를 누른 뒤 복사된 내용도 함께
+`[OBSChzzkPing]`이 포함된 줄과 설정 창 아래의 오류 문구를 함께 제공하면 원인 확인이
+빨라집니다. OBSChzzkPing 설정의 **지원 > 진단 정보 복사**를 누른 뒤 복사된 내용도 함께
 제공하면 확인에 도움이 됩니다. 이 진단 정보에는 Webhook URL과 역할 ID가 포함되지 않습니다.
 
 어느 경로로 문의하더라도 Discord Webhook URL, Discord Client Secret, 액세스 토큰, 실제
-`worker/wrangler.toml` 또는 StreamPing의 `settings.json` 파일은 첨부하거나 전송하지 마세요.
+`worker/wrangler.toml` 또는 OBSChzzkPing의 `settings.json` 파일은 첨부하거나 전송하지 마세요.
 
 ## 후원
 
-StreamPing이 도움이 되었다면 [Ko-fi에서 TereBin 후원하기](https://ko-fi.com/terebin)를
+OBSChzzkPing이 도움이 되었다면 [Ko-fi에서 TereBin 후원하기](https://ko-fi.com/terebin)를
 통해 개발을 응원할 수 있습니다.
