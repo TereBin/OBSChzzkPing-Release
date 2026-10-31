@@ -47,7 +47,12 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.8.0`입니다.
+현재 버전은 `0.8.1`입니다.
+
+### 0.8.1 변경 사항
+
+- OBS 33에서 OBS를 종료할 때 OBSChzzkPing의 Qt 객체가 중복 정리되어 충돌할 수 있던 문제를 수정했습니다.
+- OBS 종료 이벤트에서 설정 메뉴와 알림 객체를 안전하게 정리하도록 종료 처리를 보강했습니다.
 
 - [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest)
