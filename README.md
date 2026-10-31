@@ -47,44 +47,55 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.8.1`입니다.
+현재 버전은 `0.8.2`입니다.
 
-### 0.8.1 변경 사항
+### 0.8.2 변경 사항
 
-- OBS 33에서 OBS를 종료할 때 OBSChzzkPing의 Qt 객체가 중복 정리되어 충돌할 수 있던 문제를 수정했습니다.
-- OBS 종료 이벤트에서 설정 메뉴와 알림 객체를 안전하게 정리하도록 종료 처리를 보강했습니다.
+- Windows용 설치 관리자 `OBSChzzkPing-Setup.exe`를 추가했습니다.
+- 설치 관리자에서 OBS 경로 자동 탐색과 직접 선택, 실행 중인 OBS 확인 및 Windows 앱 목록 제거를 지원합니다.
+- 포터블 OBS와 수동 설치를 위한 ZIP도 계속 제공합니다.
 
-- [최신 Windows 버전 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-windows-x64.zip)
+- [Windows 설치 관리자 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-Setup.exe)
+- [수동 설치용 ZIP 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-windows-x64.zip)
 - [최신 릴리스 페이지와 변경 사항 보기](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest)
+
+현재 설치 관리자는 디지털 코드 서명이 없어 Windows SmartScreen에서 **알 수 없는 게시자**
+경고가 표시될 수 있습니다. GitHub 릴리스에서 내려받았는지 확인하고 아래 SHA-256 값과
+비교한 뒤 실행하세요. 경고를 피하고 싶다면 ZIP 수동 설치를 사용할 수 있습니다.
 
 배포 저장소의 파일 목록에는 현재 버전만 유지하며, 과거 GitHub Releases와 태그는
 삭제하지 않습니다. 전체 변경 이력은
 [소스 저장소의 CHANGELOG](https://github.com/TereBin/OBSChzzkPing/blob/main/CHANGELOG.md)에서도
 확인할 수 있습니다.
 
-다운로드한 ZIP은 [SHA256SUMS.txt](./SHA256SUMS.txt)와 비교해 무결성을 확인할 수 있습니다.
+다운로드한 설치 관리자 또는 ZIP은 [SHA256SUMS.txt](./SHA256SUMS.txt)와 비교해 무결성을 확인할 수 있습니다.
 
 ```powershell
-Get-FileHash .\OBSChzzkPing-windows-x64.zip -Algorithm SHA256
+Get-FileHash .\OBSChzzkPing-Setup.exe -Algorithm SHA256
 ```
 
 ## 설치 및 업데이트
 
 1. OBS Studio를 완전히 종료합니다.
-2. 다운로드한 ZIP 파일의 압축을 풉니다.
-3. 압축을 푼 폴더에서 `install.cmd`를 실행합니다.
-4. 관리자 권한 요청이 나타나면 승인합니다.
-5. `OBSChzzkPing 업데이트가 완료되었습니다.`라는 메시지를 확인합니다.
-6. 안내에 따라 Enter 키를 눌러 설치 창을 닫습니다.
-7. OBS를 실행하고 **도구 > OBSChzzkPing 설정**을 엽니다.
+2. `OBSChzzkPing-Setup.exe`를 실행합니다.
+3. 관리자 권한 요청이 나타나면 승인합니다.
+4. 자동으로 선택된 OBS Studio 폴더를 확인하고 설치합니다.
+5. OBS를 실행하고 **도구 > OBSChzzkPing 설정**을 엽니다.
 
-설치 프로그램은 OBS 설치 위치를 자동으로 찾습니다. 기존 OBSChzzkPing이 있으면 DLL을
+설치 관리자는 OBS 설치 위치를 자동으로 찾으며 찾지 못하면 직접 선택할 수 있습니다.
+기존 OBSChzzkPing이 있으면 DLL을
 `streamping.dll.bak`으로 백업한 뒤 새 버전으로 교체합니다. 이후 업데이트도 같은 순서로
-진행하면 됩니다.
+진행하면 됩니다. 제거는 Windows의 **설정 > 앱 > 설치된 앱 > OBSChzzkPing**에서 할 수 있습니다.
+
+### ZIP으로 수동 설치
+
+ZIP 파일의 압축을 풀고 `install.cmd`를 실행합니다. 설치 완료 메시지를 확인한 뒤 Enter
+키를 눌러 창을 닫습니다.
 
 ### 포터블 OBS 또는 자동 탐색 실패 시
 
-명령 프롬프트에서 `bin\64bit\obs64.exe`가 들어 있는 OBS 최상위 폴더를 지정합니다.
+설치 관리자에서 `bin\64bit\obs64.exe`가 들어 있는 OBS 최상위 폴더를 직접 선택합니다.
+ZIP 설치를 사용한다면 명령 프롬프트에서 다음과 같이 경로를 지정할 수도 있습니다.
 
 ```bat
 install.cmd -ObsPath "D:\Apps\obs-studio"

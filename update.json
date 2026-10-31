@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "0.8.1",
+  "latestVersion": "0.8.2",
   "minimumSupportedVersion": "0.5.0",
   "urgency": "optional",
-  "title": "OBSChzzkPing 0.8.1 업데이트",
-  "message": "OBS 33에서 프로그램 종료 중 OBSChzzkPing이 충돌할 수 있던 문제를 수정했습니다.",
+  "title": "OBSChzzkPing 0.8.2 업데이트",
+  "message": "OBS 경로 선택과 Windows 앱 목록 제거를 지원하는 설치 관리자를 추가했습니다. ZIP 설치도 계속 사용할 수 있습니다.",
   "downloadUrl": "https://github.com/TereBin/OBSChzzkPing-Release/releases/latest"
 }
