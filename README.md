@@ -47,13 +47,13 @@ Discord에 알림을 보내고, 방송 정보가 입력된 X 작성 화면을 �
 
 ## 다운로드
 
-현재 버전은 `0.8.2`입니다.
+현재 버전은 `0.8.3`입니다.
 
-### 0.8.2 변경 사항
+### 0.8.3 변경 사항
 
-- Windows용 설치 관리자 `OBSChzzkPing-Setup.exe`를 추가했습니다.
-- 설치 관리자에서 OBS 경로 자동 탐색과 직접 선택, 실행 중인 OBS 확인 및 Windows 앱 목록 제거를 지원합니다.
-- 포터블 OBS와 수동 설치를 위한 ZIP도 계속 제공합니다.
+- 플러그인 DLL에 Windows 버전 정보를 추가했습니다.
+- 통합 설치 프로그램과 Windows 파일 속성에서 설치된 OBSChzzkPing 버전을 확인할 수 있습니다.
+- DLL에 제품 이름, 파일 설명과 저작권 정보를 추가했습니다.
 
 - [Windows 설치 관리자 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-Setup.exe)
 - [수동 설치용 ZIP 바로 다운로드](https://github.com/TereBin/OBSChzzkPing-Release/releases/latest/download/OBSChzzkPing-windows-x64.zip)
